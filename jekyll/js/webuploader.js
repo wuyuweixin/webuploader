@@ -2908,7 +2908,7 @@
     
             // 判断文件是否可以被加入队列
             acceptFile: function( file ) {
-                var invalid = !file || !file.size || this.accept &&
+                var invalid = !file || this.accept &&
     
                         // 如果名字中有后缀，才做后缀白名单处理。
                         rExt.exec( file.name ) && !this.accept.test( file.name );
@@ -2962,13 +2962,13 @@
              * @description 当一批文件添加进队列以后触发。
              * @for  Uploader
              */
-            
+    
             /**
              * @property {Boolean} [auto=false]
              * @namespace options
              * @for Uploader
              * @description 设置为 true 后，不需要手动调用上传，有文件选择即开始上传。
-             * 
+             *
              */
     
             /**
@@ -2989,7 +2989,7 @@
                 files = $.map( files, function( file ) {
                     return me._addFile( file );
                 });
-    			
+    
     			if ( files.length ) {
     
                     me.owner.trigger( 'filesQueued', files );
@@ -3129,6 +3129,7 @@
         });
     
     });
+    
     /**
      * @fileOverview 添加获取Runtime相关信息的方法。
      */
